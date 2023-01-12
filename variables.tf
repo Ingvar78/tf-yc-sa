@@ -21,6 +21,7 @@ locals {
 variable "sa_name" {
   description = "Service Account Name"
   type        = string
+  default     = "base-test"
 }
 
 variable "sa_roles" {
@@ -35,7 +36,7 @@ variable "sa_description" {
   default     = null
 }
 
-variable "folder_id" {
+variable "yc_folder_id" {
   description = "Folder id (default to provider config)"
   type        = string
 }
@@ -50,4 +51,24 @@ variable "sa_cloud_roles" {
   description = "Service Account Cloud Name"
   type        = map(list(string))
   default     = {}
+}
+
+variable "service_account_key_file" {
+  description = "../YC/tf_sa_key.json"
+}
+
+variable yc_zone {
+  type    = string
+  default = "ru-central1-b"
+  description = "Zone"
+}
+
+
+variable yc_cloud_id {
+  description = "cloud id"
+}
+
+variable bucket_tf {
+  description = "bucket for terraform"
+  default = "tf-bucket-neto"
 }

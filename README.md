@@ -33,3 +33,29 @@
 | sa\_key | Service Account Key |
 | sa\_secret\_key | Service Account Static Secret Key |
 
+
+## Read and export sensitive
+
+```
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+sa = {
+  "created_at" = "2023-01-12T22:35:44Z"
+  "description" = ""
+  "folder_id" = "b1gm6im3mcuc36r6kn8s"
+  "id" = "aje59974gguc02358okt"
+  "name" = "base-test"
+  "timeouts" = null /* object */
+}
+sa_access_key = "YCAJEWCgwbWEfeY_8eXtB8GoI"
+sa_json_key = <sensitive>
+sa_json_key_string = <sensitive>
+sa_key = <sensitive>
+sa_secret_key = <sensitive>
+...
+
+$ terraform output -json sa_json_key >>sa_json_key.json
+
+```
